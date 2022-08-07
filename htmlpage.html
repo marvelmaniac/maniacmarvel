@@ -6,19 +6,17 @@
     <embed src="file:////storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
     </object>
     <script>
-      function getBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
-  });
-}
+     var fileInput = document.getElementById('ObjAlertePageLogin');
 
-var file = document.querySelector('ObjAlertePageLogin > input[type="file"]').files[0];
-getBase64(file).then(
-  data => alert(data)
-);
+var reader = new FileReader();
+reader.readAsDataURL(fileInput.files[0]);
+
+reader.onload = function () {
+	console.log(reader.result);//base64encoded string
+};
+reader.onerror = function (error) {
+	console.log('Error: ', error);
+};
       </script>
     </body>
 </html>
