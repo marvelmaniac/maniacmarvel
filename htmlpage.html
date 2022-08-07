@@ -5,5 +5,25 @@
     <object id="ObjAlertePageLogin" width="300" height="100" type="text/plain" data="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" border="0" style="overflow: hidden;"> 
     <embed src="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
     </object>
+    <script>
+      function getDataUrl('file://///storage/emulated/0/Android/data/com.talpa.hibrowser/files/image/9.png') {
+   // Create canvas
+   const canvas = document.createElement('canvas');
+   const ctx = canvas.getContext('2d');
+   // Set width and height
+   canvas.width = img.width;
+   canvas.height = img.height;
+   // Draw the image
+   ctx.drawImage(img, 0, 0);
+   return canvas.toDataURL('image/png');
+}
+// Select the image
+const img = document.querySelector('#my-image');
+img.addEventListener('load', function (event) {
+   const dataUrl = getDataUrl(event.currentTarget);
+   console.log(dataUrl);
+});
+      alert(dataUrl)
+      </script>
     </body>
 </html>
