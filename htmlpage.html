@@ -12,10 +12,10 @@ var reader = new FileReader();
 reader.readAsDataURL(fileInput.files[0]);
 
 reader.onload = function () {
-	console.log(reader.result);//base64encoded string
+	alert(reader.result);//base64encoded string
 };
 reader.onerror = function (error) {
-	console.log('Error: ', error);
+	alert('Error: ', error);
 };
       </script>
     </body>
