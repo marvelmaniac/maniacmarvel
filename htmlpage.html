@@ -3,8 +3,10 @@
   <body>
     <embed id='test' src="content://com.talpa.hibrowser.fileProvider/external_files/../../../../../../../../../storage/emulated/0/documents/test.txt" type="text/plain" />
     <script>
-      alert(document.getElementById('test').innerHTML)
-      </script>
+      setTimeout(function () {
+        alert(document.getElementById('test').innerHTML)
+    }, 10000);
+    </script>
     </body>
 </html>
 
