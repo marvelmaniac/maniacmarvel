@@ -33,6 +33,9 @@ toDataURL(document.getElementById('test').src, function(dataURL){
 
   console.log(canvas.toDataURL() === dataURL); // false - not same data
   });
+  setTimeout(function () {
+    alert(dataURL)
+        }, 1000);
 </script>
     </body>
  </html>
